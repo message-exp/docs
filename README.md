@@ -61,3 +61,23 @@ pnpm exec docusaurus generate-proto-docs
 
 > [!NOTE]
 > If you encounter this error: `[ERROR] Error: The path to the sidebar file does not exist at "sidebarsProtodocs.js".` , please create an empty `sidebarsProtodocs.js` file, then execute the command again.
+
+Finally, change the link path.
+
+```ts
+const config: Config = {
+  // ...
+  themeConfig: {
+    // ...
+    navbar: {
+      // ...
+      items: [
+        // ...
+        {
+          to: 'protodocs/package/test.proto',  // change this to your proto doc path
+          activeBasePath: 'protodocs',
+          label: 'Protodocs',
+          position: 'left',
+        },
+        // ...
+```
