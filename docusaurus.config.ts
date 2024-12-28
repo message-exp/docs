@@ -13,7 +13,7 @@ const config: Config = {
   url: 'https://message-exp.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/docs',
+  baseUrl: '/docs/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -39,6 +39,7 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
+          // routeBasePath: 'docs',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
@@ -98,7 +99,7 @@ const config: Config = {
           items: [
             {
               label: 'Docs',
-              to: '/docs/intro',
+              to: '/docs/docs/intro',  // here needs /docs prefix, but /blog not need it, why?
             },
           ],
         },
