@@ -62,6 +62,15 @@ const config: Config = {
         },
       } satisfies Preset.Options,
     ],
+    [
+      'docusaurus-protobuffet',
+      {
+        protobuffet: {
+          fileDescriptorsPath: './fixtures/proto_workspace.json',
+          sidebarPath: './sidebarsProtodocs.js',
+        }
+      }
+    ]
   ],
 
   themeConfig: {
@@ -85,6 +94,12 @@ const config: Config = {
           href: 'https://github.com/facebook/docusaurus',
           label: 'GitHub',
           position: 'right',
+        },
+        {
+          to: 'protodocs/nori/accept_msg.proto',
+          activeBasePath: 'protodocs',
+          label: 'Protodocs',
+          position: 'left',
         },
       ],
     },
