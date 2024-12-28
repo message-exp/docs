@@ -13,12 +13,12 @@ const config: Config = {
   url: 'https://message-exp.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: '/docs/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'message-exp', // Usually your GitHub org/user name.
-  projectName: 'message-exp.github.io', // Usually your repo name.
+  projectName: 'docs', // Usually your repo name.
   
   trailingSlash: false,
 
@@ -39,10 +39,11 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
+          // routeBasePath: 'docs',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/message-exp/docs/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/message-exp/docs/tree/main/',
         },
         blog: {
           showReadingTime: true,
@@ -53,7 +54,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/message-exp/docs/tree/main/',
           // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
@@ -70,7 +71,7 @@ const config: Config = {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
-      title: 'My Site',
+      title: 'Message-exp',
       logo: {
         alt: 'My Site Logo',
         src: 'img/logo.svg',
@@ -78,13 +79,13 @@ const config: Config = {
       items: [
         {
           type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
+          sidebarId: 'docsSidebar',
           position: 'left',
-          label: 'Tutorial',
+          label: 'Docs',
         },
         {to: '/blog', label: 'Blog', position: 'left'},
         {
-          href: 'https://github.com/facebook/docusaurus',
+          href: 'https://github.com/message-exp/docs',
           label: 'GitHub',
           position: 'right',
         },
@@ -97,8 +98,8 @@ const config: Config = {
           title: 'Docs',
           items: [
             {
-              label: 'Tutorial',
-              to: '/docs/intro',
+              label: 'Docs',
+              to: '/docs/docs/intro',  // here needs /docs prefix, but /blog not need it, why?
             },
           ],
         },
@@ -106,16 +107,8 @@ const config: Config = {
           title: 'Community',
           items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-            },
-            {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
-              label: 'X',
-              href: 'https://x.com/docusaurus',
+              label: 'GitHub',
+              href: 'https://github.com/message-exp/docs',
             },
           ],
         },
@@ -126,14 +119,10 @@ const config: Config = {
               label: 'Blog',
               to: '/blog',
             },
-            {
-              label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
-            },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Message-exp team. Built with Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,

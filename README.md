@@ -1,6 +1,10 @@
-# Website
+# Docs
+
+https://message-exp.github.io/docs/
 
 This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+
+For more information, please read [Docusaurus docs](https://docusaurus.io/docs/category/guides).
 
 ### Installation
 
