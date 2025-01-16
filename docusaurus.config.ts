@@ -47,8 +47,8 @@ const config: Config = {
           // routeBasePath: 'docs',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/message-exp/docs/tree/main/',
+          editUrl: 'https://github.com/message-exp/docs/tree/main/',
+          showLastUpdateTime: true,
         },
         blog: {
           showReadingTime: true,
