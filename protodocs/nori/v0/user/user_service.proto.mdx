@@ -1,0 +1,48 @@
+---
+title: user_service.proto
+hide_title: true
+---
+
+import { ProtoMessage, ProtoServiceMethod, ProtoEnum } from '@theme/ProtoFile';
+
+# `user_service.proto`
+_**path** nori/v0/user/user_service.proto_
+
+_**package** nori.v0_
+
+
+
+---
+
+## Services
+
+
+### `UserService`
+
+User services.
+
+
+#### `GetUser`
+<ProtoServiceMethod key={'GetUser-0'} method={{"name":"GetUser","description":"Get user information.","requestType":"UserId","requestLongType":"UserId","requestFullType":"nori.v0.UserId","requestStreaming":false,"responseType":"User","responseLongType":"User","responseFullType":"nori.v0.User","responseStreaming":false,"requestTypeLink":"/protodocs/nori/v0/user/user_id.proto#userid","responseTypeLink":"/protodocs/nori/v0/user/user.proto#user"}} />
+
+
+#### `Login`
+<ProtoServiceMethod key={'Login-1'} method={{"name":"Login","description":"Login with email and password.\n@exclude TODO: change response to token","requestType":"UserEmailPasswordLogin","requestLongType":"UserEmailPasswordLogin","requestFullType":"nori.v0.UserEmailPasswordLogin","requestStreaming":false,"responseType":"Empty","responseLongType":".google.protobuf.Empty","responseFullType":"google.protobuf.Empty","responseStreaming":false,"requestTypeLink":"/protodocs/nori/v0/user/user_login.proto#useremailpasswordlogin"}} />
+
+
+#### `Logout`
+<ProtoServiceMethod key={'Logout-2'} method={{"name":"Logout","description":"Log out the user.\n@exclude TODO: change request to token","requestType":"UserId","requestLongType":"UserId","requestFullType":"nori.v0.UserId","requestStreaming":false,"responseType":"Empty","responseLongType":".google.protobuf.Empty","responseFullType":"google.protobuf.Empty","responseStreaming":false,"requestTypeLink":"/protodocs/nori/v0/user/user_id.proto#userid"}} />
+
+
+#### `Signup`
+<ProtoServiceMethod key={'Signup-3'} method={{"name":"Signup","description":"Sign up a new user.\n@exclude TODO: change response to token","requestType":"User","requestLongType":"User","requestFullType":"nori.v0.User","requestStreaming":false,"responseType":"Empty","responseLongType":".google.protobuf.Empty","responseFullType":"google.protobuf.Empty","responseStreaming":false,"requestTypeLink":"/protodocs/nori/v0/user/user.proto#user"}} />
+
+
+#### `DeleteUser`
+<ProtoServiceMethod key={'DeleteUser-4'} method={{"name":"DeleteUser","description":"Delete a user.","requestType":"UserId","requestLongType":"UserId","requestFullType":"nori.v0.UserId","requestStreaming":false,"responseType":"Empty","responseLongType":".google.protobuf.Empty","responseFullType":"google.protobuf.Empty","responseStreaming":false,"requestTypeLink":"/protodocs/nori/v0/user/user_id.proto#userid"}} />
+
+
+---
+
+
+  

@@ -1,0 +1,38 @@
+---
+title: message_history.proto
+hide_title: true
+---
+
+import { ProtoMessage, ProtoServiceMethod, ProtoEnum } from '@theme/ProtoFile';
+
+# `message_history.proto`
+_**path** nori/v0/message/message_history.proto_
+
+_**package** nori.v0_
+
+
+
+---
+
+## Messages
+
+
+### `MessageHistory`
+<ProtoMessage key={0} message={{"name":"MessageHistory","longName":"MessageHistory","fullName":"nori.v0.MessageHistory","description":"Message history object.","hasExtensions":false,"hasFields":true,"hasOneofs":true,"extensions":[],"fields":[{"name":"creation","description":"","label":"","type":"MessageHistoryCreation","longType":"MessageHistoryCreation","fullType":"nori.v0.MessageHistoryCreation","ismap":false,"isoneof":true,"oneofdecl":"history","defaultValue":"","typeLink":"/protodocs/nori/v0/message/message_history.proto#messagehistorycreation"},{"name":"update","description":"","label":"","type":"MessageHistoryUpdate","longType":"MessageHistoryUpdate","fullType":"nori.v0.MessageHistoryUpdate","ismap":false,"isoneof":true,"oneofdecl":"history","defaultValue":"","typeLink":"/protodocs/nori/v0/message/message_history.proto#messagehistoryupdate"},{"name":"deletion","description":"","label":"","type":"MessageHistoryDeletion","longType":"MessageHistoryDeletion","fullType":"nori.v0.MessageHistoryDeletion","ismap":false,"isoneof":true,"oneofdecl":"history","defaultValue":"","typeLink":"/protodocs/nori/v0/message/message_history.proto#messagehistorydeletion"}]}} />
+
+
+### `MessageHistoryCreation`
+<ProtoMessage key={1} message={{"name":"MessageHistoryCreation","longName":"MessageHistoryCreation","fullName":"nori.v0.MessageHistoryCreation","description":"Message history creation object.","hasExtensions":false,"hasFields":true,"hasOneofs":false,"extensions":[],"fields":[{"name":"created_by","description":"Who create the message.","label":"","type":"UserId","longType":"UserId","fullType":"nori.v0.UserId","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":"","typeLink":"/protodocs/nori/v0/user/user_id.proto#userid"},{"name":"created_at","description":"When create the message.","label":"","type":"Timestamp","longType":"google.protobuf.Timestamp","fullType":"google.protobuf.Timestamp","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":""}]}} />
+
+
+### `MessageHistoryDeletion`
+<ProtoMessage key={2} message={{"name":"MessageHistoryDeletion","longName":"MessageHistoryDeletion","fullName":"nori.v0.MessageHistoryDeletion","description":"Message history deletion object.","hasExtensions":false,"hasFields":true,"hasOneofs":false,"extensions":[],"fields":[{"name":"deleted_by","description":"Who delete the message.","label":"","type":"UserId","longType":"UserId","fullType":"nori.v0.UserId","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":"","typeLink":"/protodocs/nori/v0/user/user_id.proto#userid"},{"name":"deleted_at","description":"When delete the message.","label":"","type":"Timestamp","longType":"google.protobuf.Timestamp","fullType":"google.protobuf.Timestamp","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":""}]}} />
+
+
+### `MessageHistoryUpdate`
+<ProtoMessage key={3} message={{"name":"MessageHistoryUpdate","longName":"MessageHistoryUpdate","fullName":"nori.v0.MessageHistoryUpdate","description":"Message history update object.","hasExtensions":false,"hasFields":true,"hasOneofs":false,"extensions":[],"fields":[{"name":"updated_by","description":"Who update the message.","label":"","type":"UserId","longType":"UserId","fullType":"nori.v0.UserId","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":"","typeLink":"/protodocs/nori/v0/user/user_id.proto#userid"},{"name":"updated_at","description":"When update the message.","label":"","type":"Timestamp","longType":"google.protobuf.Timestamp","fullType":"google.protobuf.Timestamp","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":""}]}} />
+
+---
+
+
+  

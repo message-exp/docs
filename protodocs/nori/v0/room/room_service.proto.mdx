@@ -1,0 +1,59 @@
+---
+title: room_service.proto
+hide_title: true
+---
+
+import { ProtoMessage, ProtoServiceMethod, ProtoEnum } from '@theme/ProtoFile';
+
+# `room_service.proto`
+_**path** nori/v0/room/room_service.proto_
+
+_**package** nori.v0_
+
+
+
+---
+
+## Messages
+
+
+### `JoinRoomRequest`
+<ProtoMessage key={0} message={{"name":"JoinRoomRequest","longName":"JoinRoomRequest","fullName":"nori.v0.JoinRoomRequest","description":"","hasExtensions":false,"hasFields":true,"hasOneofs":false,"extensions":[],"fields":[{"name":"room_id","description":"","label":"","type":"string","longType":"string","fullType":"string","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":""},{"name":"username","description":"","label":"","type":"string","longType":"string","fullType":"string","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":""}]}} />
+
+
+### `RoomRequest`
+<ProtoMessage key={1} message={{"name":"RoomRequest","longName":"RoomRequest","fullName":"nori.v0.RoomRequest","description":"","hasExtensions":false,"hasFields":true,"hasOneofs":false,"extensions":[],"fields":[{"name":"room_id","description":"","label":"","type":"string","longType":"string","fullType":"string","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":""}]}} />
+
+---
+## Services
+
+
+### `RoomService`
+
+Room services.
+
+
+#### `CreateRoom`
+<ProtoServiceMethod key={'CreateRoom-0'} method={{"name":"CreateRoom","description":"Create a new room.\n@exclude TODO: change request format","requestType":"Room","requestLongType":"Room","requestFullType":"nori.v0.Room","requestStreaming":false,"responseType":"Empty","responseLongType":".google.protobuf.Empty","responseFullType":"google.protobuf.Empty","responseStreaming":false,"requestTypeLink":"/protodocs/nori/v0/room/room.proto#room"}} />
+
+
+#### `InviteToRoom`
+<ProtoServiceMethod key={'InviteToRoom-1'} method={{"name":"InviteToRoom","description":"Invite a user to a room.\n@exclude TODO: change request format and file structure","requestType":"JoinRoomRequest","requestLongType":"JoinRoomRequest","requestFullType":"nori.v0.JoinRoomRequest","requestStreaming":false,"responseType":"Empty","responseLongType":".google.protobuf.Empty","responseFullType":"google.protobuf.Empty","responseStreaming":false,"requestTypeLink":"/protodocs/nori/v0/room/room_service.proto#joinroomrequest"}} />
+
+
+#### `JoinRoom`
+<ProtoServiceMethod key={'JoinRoom-2'} method={{"name":"JoinRoom","description":"Ask to join a room.\n@exclude TODO: change request format and file structure","requestType":"JoinRoomRequest","requestLongType":"JoinRoomRequest","requestFullType":"nori.v0.JoinRoomRequest","requestStreaming":false,"responseType":"Empty","responseLongType":".google.protobuf.Empty","responseFullType":"google.protobuf.Empty","responseStreaming":false,"requestTypeLink":"/protodocs/nori/v0/room/room_service.proto#joinroomrequest"}} />
+
+
+#### `LeaveRoom`
+<ProtoServiceMethod key={'LeaveRoom-3'} method={{"name":"LeaveRoom","description":"Leave a room. When there's no user left in the room, the room will be deleted.\n@exclude TODO: change request format and file structure","requestType":"JoinRoomRequest","requestLongType":"JoinRoomRequest","requestFullType":"nori.v0.JoinRoomRequest","requestStreaming":false,"responseType":"Empty","responseLongType":".google.protobuf.Empty","responseFullType":"google.protobuf.Empty","responseStreaming":false,"requestTypeLink":"/protodocs/nori/v0/room/room_service.proto#joinroomrequest"}} />
+
+
+#### `GetRoom`
+<ProtoServiceMethod key={'GetRoom-4'} method={{"name":"GetRoom","description":"Get room information.","requestType":"RoomId","requestLongType":"RoomId","requestFullType":"nori.v0.RoomId","requestStreaming":false,"responseType":"Room","responseLongType":"Room","responseFullType":"nori.v0.Room","responseStreaming":false,"requestTypeLink":"/protodocs/nori/v0/room/room_id.proto#roomid","responseTypeLink":"/protodocs/nori/v0/room/room.proto#room"}} />
+
+
+---
+
+
+  
