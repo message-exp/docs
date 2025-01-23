@@ -1,8 +1,30 @@
 import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+import sidebarsProtodocs from './sidebarsProtodocs';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
+
+// protodocs sidebar
+
+interface SidebarItem {
+  type: string;
+  id?: string;
+  items?: SidebarItem[];
+}
+
+const firstProtodoc = (): string => {
+  let element: SidebarItem = sidebarsProtodocs.protodocs[0];
+  while (element.type === 'category' && Array.isArray(element.items) && element.items.length > 0) {
+    element = element.items[0];
+  }
+  if (element.type === 'doc' && element.id) {
+    return element.id;
+  }
+  throw new Error('No valid document found in the sidebar');
+};
+
+// docusaurus config
 
 const config: Config = {
   title: 'My Site',
@@ -96,7 +118,7 @@ const config: Config = {
           position: 'right',
         },
         {
-          to: 'protodocs/nori/accept_msg.proto',
+          to: `protodocs/${firstProtodoc()}`,
           activeBasePath: 'protodocs',
           label: 'Protodocs',
           position: 'left',
