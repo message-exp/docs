@@ -120,7 +120,7 @@ const config: Config = {
         {
           to: `protodocs/${firstProtodoc()}`,
           activeBasePath: 'protodocs',
-          label: 'Protodocs',
+          label: 'API',
           position: 'left',
         },
       ],
