@@ -44,16 +44,19 @@ If you are using GitHub pages for hosting, this command is a convenient way to b
 
 Follow the following instructions to generate docs from .proto files.
 
-First, generate JSON file from .proto files.
+First, get [protoc-gen-doc](https://github.com/pseudomuto/protoc-gen-doc) and add it to PATH.
+
+Second, generate JSON file from .proto files.
 
 ```sh
 protoc \
+  --proto_path=./protos \
   --doc_out=./fixtures \
   --doc_opt=json,proto_workspace.json \
   $(find protos/nori -name "*.proto")
 ```
 
-Second, generate .mdx files from the JSON file.
+Third, generate .mdx files from the JSON file.
 
 ```sh
 pnpm exec docusaurus generate-proto-docs
@@ -62,22 +65,8 @@ pnpm exec docusaurus generate-proto-docs
 > [!NOTE]
 > If you encounter this error: `[ERROR] Error: The path to the sidebar file does not exist at "sidebarsProtodocs.js".` , please create an empty `sidebarsProtodocs.js` file, then execute the command again.
 
-Finally, change the link path.
+Finally, run the program to check the result.
 
-```ts
-const config: Config = {
-  // ...
-  themeConfig: {
-    // ...
-    navbar: {
-      // ...
-      items: [
-        // ...
-        {
-          to: 'protodocs/package/test.proto',  // change this to your proto doc path
-          activeBasePath: 'protodocs',
-          label: 'Protodocs',
-          position: 'left',
-        },
-        // ...
+```sh
+pnpm run start
 ```
