@@ -14,7 +14,8 @@ jobs:
         with:
           fetch-depth: 0
           # Needed for submodules
-          submodules: recursive
+          submodules: true
+          token: ${{ secrets.PROTOS_GITHUB_TOKEN }}
 
       - name: Pull latest submodule changes
         run: |
@@ -62,7 +63,7 @@ jobs:
       - name: Create pull request
         uses: peter-evans/create-pull-request@v5
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.PR_GITHUB_TOKEN }}
           branch: update-protos-branch
           title: "Update protos and docs"
           body: "This PR updates the protos submodule to the latest and regenerates the docs."
