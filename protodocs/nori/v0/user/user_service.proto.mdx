@@ -23,23 +23,31 @@ User services.
 
 
 #### `GetUser`
-<ProtoServiceMethod key={'GetUser-0'} method={{"name":"GetUser","description":"Get user information.","requestType":"UserId","requestLongType":"UserId","requestFullType":"nori.v0.UserId","requestStreaming":false,"responseType":"User","responseLongType":"User","responseFullType":"nori.v0.User","responseStreaming":false,"requestTypeLink":"/protodocs/nori/v0/user/user_id.proto#userid","responseTypeLink":"/protodocs/nori/v0/user/user.proto#user"}} />
+<ProtoServiceMethod key={'GetUser-0'} method={{"name":"GetUser","description":"Authentication: Not required. Get user information.","requestType":"UserId","requestLongType":"UserId","requestFullType":"nori.v0.UserId","requestStreaming":false,"responseType":"User","responseLongType":"User","responseFullType":"nori.v0.User","responseStreaming":false,"requestTypeLink":"/protodocs/nori/v0/user/user_id.proto#userid","responseTypeLink":"/protodocs/nori/v0/user/user.proto#user"}} />
 
 
 #### `Login`
-<ProtoServiceMethod key={'Login-1'} method={{"name":"Login","description":"Login with email and password.\n@exclude TODO: change response to token","requestType":"UserEmailPasswordLogin","requestLongType":"UserEmailPasswordLogin","requestFullType":"nori.v0.UserEmailPasswordLogin","requestStreaming":false,"responseType":"Empty","responseLongType":".google.protobuf.Empty","responseFullType":"google.protobuf.Empty","responseStreaming":false,"requestTypeLink":"/protodocs/nori/v0/user/user_login.proto#useremailpasswordlogin"}} />
+<ProtoServiceMethod key={'Login-1'} method={{"name":"Login","description":"Login with email and password.","requestType":"UserEmailPasswordLogin","requestLongType":"UserEmailPasswordLogin","requestFullType":"nori.v0.UserEmailPasswordLogin","requestStreaming":false,"responseType":"Empty","responseLongType":".google.protobuf.Empty","responseFullType":"google.protobuf.Empty","responseStreaming":false,"requestTypeLink":"/protodocs/nori/v0/user/user_login.proto#useremailpasswordlogin"}} />
 
 
 #### `Logout`
-<ProtoServiceMethod key={'Logout-2'} method={{"name":"Logout","description":"Log out the user.\n@exclude TODO: change request to token","requestType":"UserId","requestLongType":"UserId","requestFullType":"nori.v0.UserId","requestStreaming":false,"responseType":"Empty","responseLongType":".google.protobuf.Empty","responseFullType":"google.protobuf.Empty","responseStreaming":false,"requestTypeLink":"/protodocs/nori/v0/user/user_id.proto#userid"}} />
+<ProtoServiceMethod key={'Logout-2'} method={{"name":"Logout","description":"Authentication: Required. Log out the user.","requestType":"UserId","requestLongType":"UserId","requestFullType":"nori.v0.UserId","requestStreaming":false,"responseType":"Empty","responseLongType":".google.protobuf.Empty","responseFullType":"google.protobuf.Empty","responseStreaming":false,"requestTypeLink":"/protodocs/nori/v0/user/user_id.proto#userid"}} />
 
 
 #### `Signup`
-<ProtoServiceMethod key={'Signup-3'} method={{"name":"Signup","description":"Sign up a new user.\n@exclude TODO: change response to token","requestType":"User","requestLongType":"User","requestFullType":"nori.v0.User","requestStreaming":false,"responseType":"Empty","responseLongType":".google.protobuf.Empty","responseFullType":"google.protobuf.Empty","responseStreaming":false,"requestTypeLink":"/protodocs/nori/v0/user/user.proto#user"}} />
+<ProtoServiceMethod key={'Signup-3'} method={{"name":"Signup","description":"Authentication: Not required. Sign up a new user.","requestType":"User","requestLongType":"User","requestFullType":"nori.v0.User","requestStreaming":false,"responseType":"Empty","responseLongType":".google.protobuf.Empty","responseFullType":"google.protobuf.Empty","responseStreaming":false,"requestTypeLink":"/protodocs/nori/v0/user/user.proto#user"}} />
 
 
 #### `DeleteUser`
-<ProtoServiceMethod key={'DeleteUser-4'} method={{"name":"DeleteUser","description":"Delete a user.","requestType":"UserId","requestLongType":"UserId","requestFullType":"nori.v0.UserId","requestStreaming":false,"responseType":"Empty","responseLongType":".google.protobuf.Empty","responseFullType":"google.protobuf.Empty","responseStreaming":false,"requestTypeLink":"/protodocs/nori/v0/user/user_id.proto#userid"}} />
+<ProtoServiceMethod key={'DeleteUser-4'} method={{"name":"DeleteUser","description":"Authentication: Required. Delete a user.","requestType":"UserId","requestLongType":"UserId","requestFullType":"nori.v0.UserId","requestStreaming":false,"responseType":"Empty","responseLongType":".google.protobuf.Empty","responseFullType":"google.protobuf.Empty","responseStreaming":false,"requestTypeLink":"/protodocs/nori/v0/user/user_id.proto#userid"}} />
+
+
+#### `UpdateUserProfile`
+<ProtoServiceMethod key={'UpdateUserProfile-5'} method={{"name":"UpdateUserProfile","description":"Authentication: Required. Update user profile information.","requestType":"UserProfile","requestLongType":"UserProfile","requestFullType":"nori.v0.UserProfile","requestStreaming":false,"responseType":"Empty","responseLongType":".google.protobuf.Empty","responseFullType":"google.protobuf.Empty","responseStreaming":false,"requestTypeLink":"/protodocs/nori/v0/user/user_profile.proto#userprofile"}} />
+
+
+#### `GetUserRoomList`
+<ProtoServiceMethod key={'GetUserRoomList-6'} method={{"name":"GetUserRoomList","description":"Authentication: Required. Get user room list.","requestType":"UserId","requestLongType":"UserId","requestFullType":"nori.v0.UserId","requestStreaming":false,"responseType":"RoomList","responseLongType":"RoomList","responseFullType":"nori.v0.RoomList","responseStreaming":false,"requestTypeLink":"/protodocs/nori/v0/user/user_id.proto#userid","responseTypeLink":"/protodocs/nori/v0/room/room_list.proto#roomlist"}} />
 
 
 ---

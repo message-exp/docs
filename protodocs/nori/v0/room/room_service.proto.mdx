@@ -14,17 +14,6 @@ _**package** nori.v0_
 
 ---
 
-## Messages
-
-
-### `JoinRoomRequest`
-<ProtoMessage key={0} message={{"name":"JoinRoomRequest","longName":"JoinRoomRequest","fullName":"nori.v0.JoinRoomRequest","description":"","hasExtensions":false,"hasFields":true,"hasOneofs":false,"extensions":[],"fields":[{"name":"room_id","description":"","label":"","type":"string","longType":"string","fullType":"string","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":""},{"name":"username","description":"","label":"","type":"string","longType":"string","fullType":"string","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":""}]}} />
-
-
-### `RoomRequest`
-<ProtoMessage key={1} message={{"name":"RoomRequest","longName":"RoomRequest","fullName":"nori.v0.RoomRequest","description":"","hasExtensions":false,"hasFields":true,"hasOneofs":false,"extensions":[],"fields":[{"name":"room_id","description":"","label":"","type":"string","longType":"string","fullType":"string","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":""}]}} />
-
----
 ## Services
 
 
@@ -34,23 +23,27 @@ Room services.
 
 
 #### `CreateRoom`
-<ProtoServiceMethod key={'CreateRoom-0'} method={{"name":"CreateRoom","description":"Create a new room.\n@exclude TODO: change request format","requestType":"Room","requestLongType":"Room","requestFullType":"nori.v0.Room","requestStreaming":false,"responseType":"Empty","responseLongType":".google.protobuf.Empty","responseFullType":"google.protobuf.Empty","responseStreaming":false,"requestTypeLink":"/protodocs/nori/v0/room/room.proto#room"}} />
+<ProtoServiceMethod key={'CreateRoom-0'} method={{"name":"CreateRoom","description":"Authentication: Required. Create a new room.","requestType":"RoomCreateRequest","requestLongType":"RoomCreateRequest","requestFullType":"nori.v0.RoomCreateRequest","requestStreaming":false,"responseType":"Empty","responseLongType":".google.protobuf.Empty","responseFullType":"google.protobuf.Empty","responseStreaming":false,"requestTypeLink":"/protodocs/nori/v0/room/room_create_request.proto#roomcreaterequest"}} />
 
 
 #### `InviteToRoom`
-<ProtoServiceMethod key={'InviteToRoom-1'} method={{"name":"InviteToRoom","description":"Invite a user to a room.\n@exclude TODO: change request format and file structure","requestType":"JoinRoomRequest","requestLongType":"JoinRoomRequest","requestFullType":"nori.v0.JoinRoomRequest","requestStreaming":false,"responseType":"Empty","responseLongType":".google.protobuf.Empty","responseFullType":"google.protobuf.Empty","responseStreaming":false,"requestTypeLink":"/protodocs/nori/v0/room/room_service.proto#joinroomrequest"}} />
+<ProtoServiceMethod key={'InviteToRoom-1'} method={{"name":"InviteToRoom","description":"Authentication: Required. Invite a user to a room.","requestType":"RoomUserRequest","requestLongType":"RoomUserRequest","requestFullType":"nori.v0.RoomUserRequest","requestStreaming":false,"responseType":"Empty","responseLongType":".google.protobuf.Empty","responseFullType":"google.protobuf.Empty","responseStreaming":false,"requestTypeLink":"/protodocs/nori/v0/room/room_user_request.proto#roomuserrequest"}} />
 
 
 #### `JoinRoom`
-<ProtoServiceMethod key={'JoinRoom-2'} method={{"name":"JoinRoom","description":"Ask to join a room.\n@exclude TODO: change request format and file structure","requestType":"JoinRoomRequest","requestLongType":"JoinRoomRequest","requestFullType":"nori.v0.JoinRoomRequest","requestStreaming":false,"responseType":"Empty","responseLongType":".google.protobuf.Empty","responseFullType":"google.protobuf.Empty","responseStreaming":false,"requestTypeLink":"/protodocs/nori/v0/room/room_service.proto#joinroomrequest"}} />
+<ProtoServiceMethod key={'JoinRoom-2'} method={{"name":"JoinRoom","description":"Authentication: Required. Ask to join a room.","requestType":"RoomUserRequest","requestLongType":"RoomUserRequest","requestFullType":"nori.v0.RoomUserRequest","requestStreaming":false,"responseType":"Empty","responseLongType":".google.protobuf.Empty","responseFullType":"google.protobuf.Empty","responseStreaming":false,"requestTypeLink":"/protodocs/nori/v0/room/room_user_request.proto#roomuserrequest"}} />
 
 
 #### `LeaveRoom`
-<ProtoServiceMethod key={'LeaveRoom-3'} method={{"name":"LeaveRoom","description":"Leave a room. When there's no user left in the room, the room will be deleted.\n@exclude TODO: change request format and file structure","requestType":"JoinRoomRequest","requestLongType":"JoinRoomRequest","requestFullType":"nori.v0.JoinRoomRequest","requestStreaming":false,"responseType":"Empty","responseLongType":".google.protobuf.Empty","responseFullType":"google.protobuf.Empty","responseStreaming":false,"requestTypeLink":"/protodocs/nori/v0/room/room_service.proto#joinroomrequest"}} />
+<ProtoServiceMethod key={'LeaveRoom-3'} method={{"name":"LeaveRoom","description":"Authentication: Required. Leave a room. When there's no user left in the room, the room will be deleted.","requestType":"RoomUserRequest","requestLongType":"RoomUserRequest","requestFullType":"nori.v0.RoomUserRequest","requestStreaming":false,"responseType":"Empty","responseLongType":".google.protobuf.Empty","responseFullType":"google.protobuf.Empty","responseStreaming":false,"requestTypeLink":"/protodocs/nori/v0/room/room_user_request.proto#roomuserrequest"}} />
 
 
 #### `GetRoom`
-<ProtoServiceMethod key={'GetRoom-4'} method={{"name":"GetRoom","description":"Get room information.","requestType":"RoomId","requestLongType":"RoomId","requestFullType":"nori.v0.RoomId","requestStreaming":false,"responseType":"Room","responseLongType":"Room","responseFullType":"nori.v0.Room","responseStreaming":false,"requestTypeLink":"/protodocs/nori/v0/room/room_id.proto#roomid","responseTypeLink":"/protodocs/nori/v0/room/room.proto#room"}} />
+<ProtoServiceMethod key={'GetRoom-4'} method={{"name":"GetRoom","description":"Authentication: Not required. Get room information.","requestType":"RoomId","requestLongType":"RoomId","requestFullType":"nori.v0.RoomId","requestStreaming":false,"responseType":"Room","responseLongType":"Room","responseFullType":"nori.v0.Room","responseStreaming":false,"requestTypeLink":"/protodocs/nori/v0/room/room_id.proto#roomid","responseTypeLink":"/protodocs/nori/v0/room/room.proto#room"}} />
+
+
+#### `UpdateRoomBasic`
+<ProtoServiceMethod key={'UpdateRoomBasic-5'} method={{"name":"UpdateRoomBasic","description":"Authentication: Required. Update room basic/overview information.","requestType":"RoomBasicInfoRequest","requestLongType":"RoomBasicInfoRequest","requestFullType":"nori.v0.RoomBasicInfoRequest","requestStreaming":false,"responseType":"Empty","responseLongType":".google.protobuf.Empty","responseFullType":"google.protobuf.Empty","responseStreaming":false,"requestTypeLink":"/protodocs/nori/v0/room/room_basic_info_request.proto#roombasicinforequest"}} />
 
 
 ---
