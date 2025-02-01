@@ -15,7 +15,6 @@ jobs:
           fetch-depth: 0
           # Needed for submodules
           submodules: true
-          token: ${{ secrets.PROTOS_GITHUB_TOKEN }}
 
       - name: Pull latest submodule changes
         run: |
