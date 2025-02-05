@@ -1,0 +1,36 @@
+---
+title: message_service.proto
+hide_title: true
+---
+
+import { ProtoMessage, ProtoServiceMethod, ProtoEnum } from '@theme/ProtoFile';
+
+# `message_service.proto`
+_**path** nori/v0/message/message_service.proto_
+
+_**package** nori.v0_
+
+
+
+---
+
+## Services
+
+
+### `MessageService`
+
+Message services.
+
+
+#### `SendMessage`
+<ProtoServiceMethod key={'SendMessage-0'} method={{"name":"SendMessage","description":"Authentication: Required. Send a message.","requestType":"Message","requestLongType":"Message","requestFullType":"nori.v0.Message","requestStreaming":false,"responseType":"Empty","responseLongType":".google.protobuf.Empty","responseFullType":"google.protobuf.Empty","responseStreaming":false,"requestTypeLink":"/protodocs/nori/v0/message/message.proto#message"}} />
+
+
+#### `GetMessages`
+<ProtoServiceMethod key={'GetMessages-1'} method={{"name":"GetMessages","description":"Authentication: Required. Receive messages.","requestType":"RoomId","requestLongType":"RoomId","requestFullType":"nori.v0.RoomId","requestStreaming":false,"responseType":"Message","responseLongType":"Message","responseFullType":"nori.v0.Message","responseStreaming":true,"requestTypeLink":"/protodocs/nori/v0/room/room_id.proto#roomid","responseTypeLink":"/protodocs/nori/v0/message/message.proto#message"}} />
+
+
+---
+
+
+  

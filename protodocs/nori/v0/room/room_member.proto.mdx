@@ -1,0 +1,33 @@
+---
+title: room_member.proto
+hide_title: true
+---
+
+import { ProtoMessage, ProtoServiceMethod, ProtoEnum } from '@theme/ProtoFile';
+
+# `room_member.proto`
+_**path** nori/v0/room/room_member.proto_
+
+_**package** nori.v0_
+
+
+
+---
+
+## Messages
+
+
+### `RoomMember`
+<ProtoMessage key={0} message={{"name":"RoomMember","longName":"RoomMember","fullName":"nori.v0.RoomMember","description":"Room member object.","hasExtensions":false,"hasFields":true,"hasOneofs":false,"extensions":[],"fields":[{"name":"user_id","description":"User identifier.","label":"","type":"UserId","longType":"UserId","fullType":"nori.v0.UserId","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":"","typeLink":"/protodocs/nori/v0/user/user_id.proto#userid"},{"name":"room_nickname","description":"User room nickname that is shared to all room members.","label":"","type":"string","longType":"string","fullType":"string","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":""},{"name":"status","description":"Status of the user in the room.","label":"","type":"RoomMemberStatus","longType":"RoomMemberStatus","fullType":"nori.v0.RoomMemberStatus","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":"","typeLink":"/protodocs/nori/v0/room/room_member.proto#roommemberstatus"}]}} />
+
+---
+## Enums
+
+
+### `RoomMemberStatus`
+<ProtoEnum key={0} enumb={{"name":"RoomMemberStatus","longName":"RoomMemberStatus","fullName":"nori.v0.RoomMemberStatus","description":"","values":[{"name":"JOINED","number":"0","description":"User has joined the room."},{"name":"INVITED","number":"1","description":"User has been invited to join the room. The user has not accepted the invitation yet."},{"name":"ASKED_TO_JOIN","number":"2","description":"User has been asked to join the room. The admin has not accepted the request yet."}]}} />
+
+---
+
+
+  
