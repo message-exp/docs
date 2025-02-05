@@ -18,7 +18,7 @@ _**package** nori.v0_
 
 
 ### `RoomCreateRequest`
-<ProtoMessage key={0} message={{"name":"RoomCreateRequest","longName":"RoomCreateRequest","fullName":"nori.v0.RoomCreateRequest","description":"Room create request body.","hasExtensions":false,"hasFields":true,"hasOneofs":false,"extensions":[],"fields":[{"name":"room_id","description":"Room identifier.","label":"","type":"RoomId","longType":"RoomId","fullType":"nori.v0.RoomId","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":"","typeLink":"/protodocs/nori/v0/room/room_id.proto#roomid"},{"name":"name","description":"Room name shared with all room members.","label":"","type":"string","longType":"string","fullType":"string","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":""}]}} />
+<ProtoMessage key={0} message={{"name":"RoomCreateRequest","longName":"RoomCreateRequest","fullName":"nori.v0.RoomCreateRequest","description":"Room create request body.","hasExtensions":false,"hasFields":true,"hasOneofs":false,"extensions":[],"fields":[{"name":"name","description":"Room name shared with all room members.","label":"","type":"string","longType":"string","fullType":"string","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":""},{"name":"creator","description":"Room creator user_id.","label":"","type":"UserId","longType":"UserId","fullType":"nori.v0.UserId","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":"","typeLink":"/protodocs/nori/v0/user/user_id.proto#userid"},{"name":"invitees","description":"Room invitees user_id.","label":"repeated","type":"UserId","longType":"UserId","fullType":"nori.v0.UserId","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":"","typeLink":"/protodocs/nori/v0/user/user_id.proto#userid"}]}} />
 
 ---
 
