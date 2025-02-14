@@ -21,33 +21,43 @@ _**package** nori.v0_
 
 User services.
 
+Account
+
 
 #### `GetUser`
 <ProtoServiceMethod key={'GetUser-0'} method={{"name":"GetUser","description":"Authentication: Not required. Get user information.","requestType":"UserId","requestLongType":"UserId","requestFullType":"nori.v0.UserId","requestStreaming":false,"responseType":"User","responseLongType":"User","responseFullType":"nori.v0.User","responseStreaming":false,"requestTypeLink":"/protodocs/nori/v0/user/user_id.proto#userid","responseTypeLink":"/protodocs/nori/v0/user/user.proto#user"}} />
 
 
-#### `Login`
-<ProtoServiceMethod key={'Login-1'} method={{"name":"Login","description":"Login with email and password.","requestType":"UserEmailPasswordLogin","requestLongType":"UserEmailPasswordLogin","requestFullType":"nori.v0.UserEmailPasswordLogin","requestStreaming":false,"responseType":"Empty","responseLongType":".google.protobuf.Empty","responseFullType":"google.protobuf.Empty","responseStreaming":false,"requestTypeLink":"/protodocs/nori/v0/user/user_login.proto#useremailpasswordlogin"}} />
-
-
-#### `Logout`
-<ProtoServiceMethod key={'Logout-2'} method={{"name":"Logout","description":"Authentication: Required. Log out the user.","requestType":"UserId","requestLongType":"UserId","requestFullType":"nori.v0.UserId","requestStreaming":false,"responseType":"Empty","responseLongType":".google.protobuf.Empty","responseFullType":"google.protobuf.Empty","responseStreaming":false,"requestTypeLink":"/protodocs/nori/v0/user/user_id.proto#userid"}} />
-
-
 #### `Signup`
-<ProtoServiceMethod key={'Signup-3'} method={{"name":"Signup","description":"Authentication: Not required. Sign up a new user.","requestType":"User","requestLongType":"User","requestFullType":"nori.v0.User","requestStreaming":false,"responseType":"Empty","responseLongType":".google.protobuf.Empty","responseFullType":"google.protobuf.Empty","responseStreaming":false,"requestTypeLink":"/protodocs/nori/v0/user/user.proto#user"}} />
+<ProtoServiceMethod key={'Signup-1'} method={{"name":"Signup","description":"Authentication: Not required. Sign up a new user.","requestType":"SignUpRequest","requestLongType":"SignUpRequest","requestFullType":"nori.v0.SignUpRequest","requestStreaming":false,"responseType":"TokenPair","responseLongType":"TokenPair","responseFullType":"nori.v0.TokenPair","responseStreaming":false,"requestTypeLink":"/protodocs/nori/v0/user/signup_request.proto#signuprequest","responseTypeLink":"/protodocs/nori/v0/user/token_pair.proto#tokenpair"}} />
 
 
 #### `DeleteUser`
-<ProtoServiceMethod key={'DeleteUser-4'} method={{"name":"DeleteUser","description":"Authentication: Required. Delete a user.","requestType":"UserId","requestLongType":"UserId","requestFullType":"nori.v0.UserId","requestStreaming":false,"responseType":"Empty","responseLongType":".google.protobuf.Empty","responseFullType":"google.protobuf.Empty","responseStreaming":false,"requestTypeLink":"/protodocs/nori/v0/user/user_id.proto#userid"}} />
+<ProtoServiceMethod key={'DeleteUser-2'} method={{"name":"DeleteUser","description":"Authentication: Required. Delete a user.","requestType":"UserId","requestLongType":"UserId","requestFullType":"nori.v0.UserId","requestStreaming":false,"responseType":"Empty","responseLongType":".google.protobuf.Empty","responseFullType":"google.protobuf.Empty","responseStreaming":false,"requestTypeLink":"/protodocs/nori/v0/user/user_id.proto#userid"}} />
 
 
 #### `UpdateUserProfile`
-<ProtoServiceMethod key={'UpdateUserProfile-5'} method={{"name":"UpdateUserProfile","description":"Authentication: Required. Update user profile information.","requestType":"UserProfile","requestLongType":"UserProfile","requestFullType":"nori.v0.UserProfile","requestStreaming":false,"responseType":"Empty","responseLongType":".google.protobuf.Empty","responseFullType":"google.protobuf.Empty","responseStreaming":false,"requestTypeLink":"/protodocs/nori/v0/user/user_profile.proto#userprofile"}} />
+<ProtoServiceMethod key={'UpdateUserProfile-3'} method={{"name":"UpdateUserProfile","description":"Authentication: Required. Update user profile information.","requestType":"UserProfileUpdateRequest","requestLongType":"UserProfileUpdateRequest","requestFullType":"nori.v0.UserProfileUpdateRequest","requestStreaming":false,"responseType":"Empty","responseLongType":".google.protobuf.Empty","responseFullType":"google.protobuf.Empty","responseStreaming":false,"requestTypeLink":"/protodocs/nori/v0/user/user_profile_update_request.proto#userprofileupdaterequest"}} />
 
 
 #### `GetUserRoomList`
-<ProtoServiceMethod key={'GetUserRoomList-6'} method={{"name":"GetUserRoomList","description":"Authentication: Required. Get user room list.","requestType":"UserId","requestLongType":"UserId","requestFullType":"nori.v0.UserId","requestStreaming":false,"responseType":"RoomList","responseLongType":"RoomList","responseFullType":"nori.v0.RoomList","responseStreaming":false,"requestTypeLink":"/protodocs/nori/v0/user/user_id.proto#userid","responseTypeLink":"/protodocs/nori/v0/room/room_list.proto#roomlist"}} />
+<ProtoServiceMethod key={'GetUserRoomList-4'} method={{"name":"GetUserRoomList","description":"Authentication: Required. Get user room list.","requestType":"UserId","requestLongType":"UserId","requestFullType":"nori.v0.UserId","requestStreaming":false,"responseType":"RoomList","responseLongType":"RoomList","responseFullType":"nori.v0.RoomList","responseStreaming":false,"requestTypeLink":"/protodocs/nori/v0/user/user_id.proto#userid","responseTypeLink":"/protodocs/nori/v0/room/room_list.proto#roomlist"}} />
+
+
+#### `Login`
+<ProtoServiceMethod key={'Login-5'} method={{"name":"Login","description":"Login with email and password.","requestType":"UserEmailPasswordLogin","requestLongType":"UserEmailPasswordLogin","requestFullType":"nori.v0.UserEmailPasswordLogin","requestStreaming":false,"responseType":"TokenPair","responseLongType":"TokenPair","responseFullType":"nori.v0.TokenPair","responseStreaming":false,"requestTypeLink":"/protodocs/nori/v0/user/user_login.proto#useremailpasswordlogin","responseTypeLink":"/protodocs/nori/v0/user/token_pair.proto#tokenpair"}} />
+
+
+#### `Logout`
+<ProtoServiceMethod key={'Logout-6'} method={{"name":"Logout","description":"Authentication: Required. Log out the user.","requestType":"TokenPair","requestLongType":"TokenPair","requestFullType":"nori.v0.TokenPair","requestStreaming":false,"responseType":"Empty","responseLongType":".google.protobuf.Empty","responseFullType":"google.protobuf.Empty","responseStreaming":false,"requestTypeLink":"/protodocs/nori/v0/user/token_pair.proto#tokenpair"}} />
+
+
+#### `RefreshToken`
+<ProtoServiceMethod key={'RefreshToken-7'} method={{"name":"RefreshToken","description":"Authentication: Required. Refresh user token.","requestType":"UserId","requestLongType":"UserId","requestFullType":"nori.v0.UserId","requestStreaming":false,"responseType":"AccessToken","responseLongType":"AccessToken","responseFullType":"nori.v0.AccessToken","responseStreaming":false,"requestTypeLink":"/protodocs/nori/v0/user/user_id.proto#userid","responseTypeLink":"/protodocs/nori/v0/user/access_token.proto#accesstoken"}} />
+
+
+#### `ResetUserPassword`
+<ProtoServiceMethod key={'ResetUserPassword-8'} method={{"name":"ResetUserPassword","description":"Authentication: Required. Reset user password.","requestType":"UserResetPasswordRequest","requestLongType":"UserResetPasswordRequest","requestFullType":"nori.v0.UserResetPasswordRequest","requestStreaming":false,"responseType":"Empty","responseLongType":".google.protobuf.Empty","responseFullType":"google.protobuf.Empty","responseStreaming":false,"requestTypeLink":"/protodocs/nori/v0/user/user_reset_password_request.proto#userresetpasswordrequest"}} />
 
 
 ---

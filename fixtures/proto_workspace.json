@@ -143,11 +143,47 @@
               "responseStreaming": false
             },
             {
+              "name": "GetRoom",
+              "description": "Authentication: Required. Get room information. TODO: tear down and avoid return whole room object.",
+              "requestType": "RoomUserRequest",
+              "requestLongType": "RoomUserRequest",
+              "requestFullType": "nori.v0.RoomUserRequest",
+              "requestStreaming": false,
+              "responseType": "Room",
+              "responseLongType": "Room",
+              "responseFullType": "nori.v0.Room",
+              "responseStreaming": false
+            },
+            {
+              "name": "UpdateRoomBasic",
+              "description": "Authentication: Required. Update room basic/overview information.",
+              "requestType": "RoomBasicInfoRequest",
+              "requestLongType": "RoomBasicInfoRequest",
+              "requestFullType": "nori.v0.RoomBasicInfoRequest",
+              "requestStreaming": false,
+              "responseType": "Empty",
+              "responseLongType": ".google.protobuf.Empty",
+              "responseFullType": "google.protobuf.Empty",
+              "responseStreaming": false
+            },
+            {
               "name": "InviteToRoom",
               "description": "Authentication: Required. Invite a user to a room.",
               "requestType": "InviteUserToRoomRequest",
               "requestLongType": "InviteUserToRoomRequest",
               "requestFullType": "nori.v0.InviteUserToRoomRequest",
+              "requestStreaming": false,
+              "responseType": "Empty",
+              "responseLongType": ".google.protobuf.Empty",
+              "responseFullType": "google.protobuf.Empty",
+              "responseStreaming": false
+            },
+            {
+              "name": "InviteRoomReply",
+              "description": "Authentication: Required. Reply an invitation to a room.",
+              "requestType": "RoomJoinInviteReply",
+              "requestLongType": "RoomJoinInviteReply",
+              "requestFullType": "nori.v0.RoomJoinInviteReply",
               "requestStreaming": false,
               "responseType": "Empty",
               "responseLongType": ".google.protobuf.Empty",
@@ -167,6 +203,18 @@
               "responseStreaming": false
             },
             {
+              "name": "JoinRoomReply",
+              "description": "Authentication: Required. Reply to a join room request.",
+              "requestType": "RoomJoinRequestReply",
+              "requestLongType": "RoomJoinRequestReply",
+              "requestFullType": "nori.v0.RoomJoinRequestReply",
+              "requestStreaming": false,
+              "responseType": "Empty",
+              "responseLongType": ".google.protobuf.Empty",
+              "responseFullType": "google.protobuf.Empty",
+              "responseStreaming": false
+            },
+            {
               "name": "LeaveRoom",
               "description": "Authentication: Required. Leave a room. When there's no user left in the room, the room will be deleted.",
               "requestType": "RoomUserRequest",
@@ -177,34 +225,84 @@
               "responseLongType": ".google.protobuf.Empty",
               "responseFullType": "google.protobuf.Empty",
               "responseStreaming": false
-            },
-            {
-              "name": "GetRoom",
-              "description": "Authentication: Required. Get room information. TODO: tear down and avoid return whole room object.",
-              "requestType": "RoomId",
-              "requestLongType": "RoomId",
-              "requestFullType": "nori.v0.RoomId",
-              "requestStreaming": false,
-              "responseType": "Room",
-              "responseLongType": "Room",
-              "responseFullType": "nori.v0.Room",
-              "responseStreaming": false
-            },
-            {
-              "name": "UpdateRoomBasic",
-              "description": "Authentication: Required. Update room basic/overview information.",
-              "requestType": "RoomBasicInfoRequest",
-              "requestLongType": "RoomBasicInfoRequest",
-              "requestFullType": "nori.v0.RoomBasicInfoRequest",
-              "requestStreaming": false,
-              "responseType": "Empty",
-              "responseLongType": ".google.protobuf.Empty",
-              "responseFullType": "google.protobuf.Empty",
-              "responseStreaming": false
             }
           ]
         }
       ]
+    },
+    {
+      "name": "nori/v0/room/room_join_request_reply.proto",
+      "description": "",
+      "package": "nori.v0",
+      "hasEnums": false,
+      "hasExtensions": false,
+      "hasMessages": true,
+      "hasServices": false,
+      "enums": [],
+      "extensions": [],
+      "messages": [
+        {
+          "name": "RoomJoinRequestReply",
+          "longName": "RoomJoinRequestReply",
+          "fullName": "nori.v0.RoomJoinRequestReply",
+          "description": "Reply to a join room request or invitation.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "room_id",
+              "description": "Room id of the message.",
+              "label": "",
+              "type": "RoomId",
+              "longType": "RoomId",
+              "fullType": "nori.v0.RoomId",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "joiner",
+              "description": "User id of the person joining.",
+              "label": "",
+              "type": "UserId",
+              "longType": "UserId",
+              "fullType": "nori.v0.UserId",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "accept",
+              "description": "Indicates if the join request is accepted.",
+              "label": "",
+              "type": "bool",
+              "longType": "bool",
+              "fullType": "bool",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "approver",
+              "description": "User id of the person accepting the request.",
+              "label": "",
+              "type": "UserId",
+              "longType": "UserId",
+              "fullType": "nori.v0.UserId",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        }
+      ],
+      "services": []
     },
     {
       "name": "nori/v0/room/room_basic_info_response.proto",
@@ -615,6 +713,56 @@
       "services": []
     },
     {
+      "name": "nori/v0/room/room_join_invite_reply.proto",
+      "description": "",
+      "package": "nori.v0",
+      "hasEnums": false,
+      "hasExtensions": false,
+      "hasMessages": true,
+      "hasServices": false,
+      "enums": [],
+      "extensions": [],
+      "messages": [
+        {
+          "name": "RoomJoinInviteReply",
+          "longName": "RoomJoinInviteReply",
+          "fullName": "nori.v0.RoomJoinInviteReply",
+          "description": "Reply to an invitation to join a room.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "room_id",
+              "description": "Room id of the message.",
+              "label": "",
+              "type": "RoomId",
+              "longType": "RoomId",
+              "fullType": "nori.v0.RoomId",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "accept",
+              "description": "Indicates if the join request is accepted.",
+              "label": "",
+              "type": "bool",
+              "longType": "bool",
+              "fullType": "bool",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        }
+      ],
+      "services": []
+    },
+    {
       "name": "nori/v0/room/room_basic_info_request.proto",
       "description": "",
       "package": "nori.v0",
@@ -677,6 +825,192 @@
       "services": []
     },
     {
+      "name": "nori/v0/user/user_profile_update_request.proto",
+      "description": "",
+      "package": "nori.v0",
+      "hasEnums": false,
+      "hasExtensions": false,
+      "hasMessages": true,
+      "hasServices": false,
+      "enums": [],
+      "extensions": [],
+      "messages": [
+        {
+          "name": "UserProfileUpdateRequest",
+          "longName": "UserProfileUpdateRequest",
+          "fullName": "nori.v0.UserProfileUpdateRequest",
+          "description": "User profile object.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "user_id",
+              "description": "User identifier.",
+              "label": "",
+              "type": "UserId",
+              "longType": "UserId",
+              "fullType": "nori.v0.UserId",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "username",
+              "description": "User's unique username.",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "email",
+              "description": "User's email address.",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "display_name",
+              "description": "User's display name.",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "avatar_url",
+              "description": "User's avatar URL.",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        }
+      ],
+      "services": []
+    },
+    {
+      "name": "nori/v0/user/refresh_token.proto",
+      "description": "",
+      "package": "nori.v0",
+      "hasEnums": false,
+      "hasExtensions": false,
+      "hasMessages": true,
+      "hasServices": false,
+      "enums": [],
+      "extensions": [],
+      "messages": [
+        {
+          "name": "RefreshToken",
+          "longName": "RefreshToken",
+          "fullName": "nori.v0.RefreshToken",
+          "description": "Represents a user's refresh token.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "refresh_token",
+              "description": "User's refresh token in bytes.",
+              "label": "",
+              "type": "bytes",
+              "longType": "bytes",
+              "fullType": "bytes",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        }
+      ],
+      "services": []
+    },
+    {
+      "name": "nori/v0/user/user_reset_password_request.proto",
+      "description": "",
+      "package": "nori.v0",
+      "hasEnums": false,
+      "hasExtensions": false,
+      "hasMessages": true,
+      "hasServices": false,
+      "enums": [],
+      "extensions": [],
+      "messages": [
+        {
+          "name": "UserResetPasswordRequest",
+          "longName": "UserResetPasswordRequest",
+          "fullName": "nori.v0.UserResetPasswordRequest",
+          "description": "Reset user password request object.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "user_id",
+              "description": "User identifier.",
+              "label": "",
+              "type": "UserId",
+              "longType": "UserId",
+              "fullType": "nori.v0.UserId",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "original_password",
+              "description": "User's original password.",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "new_password",
+              "description": "User's new password.",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        }
+      ],
+      "services": []
+    },
+    {
       "name": "nori/v0/user/user_login.proto",
       "description": "",
       "package": "nori.v0",
@@ -712,6 +1046,68 @@
             {
               "name": "password",
               "description": "Password to log in.",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        }
+      ],
+      "services": []
+    },
+    {
+      "name": "nori/v0/user/signup_request.proto",
+      "description": "",
+      "package": "nori.v0",
+      "hasEnums": false,
+      "hasExtensions": false,
+      "hasMessages": true,
+      "hasServices": false,
+      "enums": [],
+      "extensions": [],
+      "messages": [
+        {
+          "name": "SignUpRequest",
+          "longName": "SignUpRequest",
+          "fullName": "nori.v0.SignUpRequest",
+          "description": "Sign up request object.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "username",
+              "description": "User's unique username.",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "email",
+              "description": "User's email address.",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "display_name",
+              "description": "User's display name.",
               "label": "",
               "type": "string",
               "longType": "string",
@@ -875,92 +1271,6 @@
       "services": []
     },
     {
-      "name": "nori/v0/user/user_profile.proto",
-      "description": "",
-      "package": "nori.v0",
-      "hasEnums": false,
-      "hasExtensions": false,
-      "hasMessages": true,
-      "hasServices": false,
-      "enums": [],
-      "extensions": [],
-      "messages": [
-        {
-          "name": "UserProfile",
-          "longName": "UserProfile",
-          "fullName": "nori.v0.UserProfile",
-          "description": "User profile object.",
-          "hasExtensions": false,
-          "hasFields": true,
-          "hasOneofs": false,
-          "extensions": [],
-          "fields": [
-            {
-              "name": "user_id",
-              "description": "User identifier.",
-              "label": "",
-              "type": "UserId",
-              "longType": "UserId",
-              "fullType": "nori.v0.UserId",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "username",
-              "description": "User's unique username.",
-              "label": "",
-              "type": "string",
-              "longType": "string",
-              "fullType": "string",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "email",
-              "description": "User's email address.",
-              "label": "",
-              "type": "string",
-              "longType": "string",
-              "fullType": "string",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "display_name",
-              "description": "User's display name.",
-              "label": "",
-              "type": "string",
-              "longType": "string",
-              "fullType": "string",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "avatar_url",
-              "description": "User's avatar URL.",
-              "label": "",
-              "type": "string",
-              "longType": "string",
-              "fullType": "string",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            }
-          ]
-        }
-      ],
-      "services": []
-    },
-    {
       "name": "nori/v0/user/user_connection.proto",
       "description": "",
       "package": "nori.v0",
@@ -1001,7 +1311,7 @@
           "name": "UserService",
           "longName": "UserService",
           "fullName": "nori.v0.UserService",
-          "description": "User services.",
+          "description": "User services.\n\nAccount",
           "methods": [
             {
               "name": "GetUser",
@@ -1016,39 +1326,15 @@
               "responseStreaming": false
             },
             {
-              "name": "Login",
-              "description": "Login with email and password.",
-              "requestType": "UserEmailPasswordLogin",
-              "requestLongType": "UserEmailPasswordLogin",
-              "requestFullType": "nori.v0.UserEmailPasswordLogin",
-              "requestStreaming": false,
-              "responseType": "Empty",
-              "responseLongType": ".google.protobuf.Empty",
-              "responseFullType": "google.protobuf.Empty",
-              "responseStreaming": false
-            },
-            {
-              "name": "Logout",
-              "description": "Authentication: Required. Log out the user.",
-              "requestType": "UserId",
-              "requestLongType": "UserId",
-              "requestFullType": "nori.v0.UserId",
-              "requestStreaming": false,
-              "responseType": "Empty",
-              "responseLongType": ".google.protobuf.Empty",
-              "responseFullType": "google.protobuf.Empty",
-              "responseStreaming": false
-            },
-            {
               "name": "Signup",
               "description": "Authentication: Not required. Sign up a new user.",
-              "requestType": "User",
-              "requestLongType": "User",
-              "requestFullType": "nori.v0.User",
+              "requestType": "SignUpRequest",
+              "requestLongType": "SignUpRequest",
+              "requestFullType": "nori.v0.SignUpRequest",
               "requestStreaming": false,
-              "responseType": "Empty",
-              "responseLongType": ".google.protobuf.Empty",
-              "responseFullType": "google.protobuf.Empty",
+              "responseType": "TokenPair",
+              "responseLongType": "TokenPair",
+              "responseFullType": "nori.v0.TokenPair",
               "responseStreaming": false
             },
             {
@@ -1066,9 +1352,9 @@
             {
               "name": "UpdateUserProfile",
               "description": "Authentication: Required. Update user profile information.",
-              "requestType": "UserProfile",
-              "requestLongType": "UserProfile",
-              "requestFullType": "nori.v0.UserProfile",
+              "requestType": "UserProfileUpdateRequest",
+              "requestLongType": "UserProfileUpdateRequest",
+              "requestFullType": "nori.v0.UserProfileUpdateRequest",
               "requestStreaming": false,
               "responseType": "Empty",
               "responseLongType": ".google.protobuf.Empty",
@@ -1086,10 +1372,146 @@
               "responseLongType": "RoomList",
               "responseFullType": "nori.v0.RoomList",
               "responseStreaming": false
+            },
+            {
+              "name": "Login",
+              "description": "Login with email and password.",
+              "requestType": "UserEmailPasswordLogin",
+              "requestLongType": "UserEmailPasswordLogin",
+              "requestFullType": "nori.v0.UserEmailPasswordLogin",
+              "requestStreaming": false,
+              "responseType": "TokenPair",
+              "responseLongType": "TokenPair",
+              "responseFullType": "nori.v0.TokenPair",
+              "responseStreaming": false
+            },
+            {
+              "name": "Logout",
+              "description": "Authentication: Required. Log out the user.",
+              "requestType": "TokenPair",
+              "requestLongType": "TokenPair",
+              "requestFullType": "nori.v0.TokenPair",
+              "requestStreaming": false,
+              "responseType": "Empty",
+              "responseLongType": ".google.protobuf.Empty",
+              "responseFullType": "google.protobuf.Empty",
+              "responseStreaming": false
+            },
+            {
+              "name": "RefreshToken",
+              "description": "Authentication: Required. Refresh user token.",
+              "requestType": "UserId",
+              "requestLongType": "UserId",
+              "requestFullType": "nori.v0.UserId",
+              "requestStreaming": false,
+              "responseType": "AccessToken",
+              "responseLongType": "AccessToken",
+              "responseFullType": "nori.v0.AccessToken",
+              "responseStreaming": false
+            },
+            {
+              "name": "ResetUserPassword",
+              "description": "Authentication: Required. Reset user password.",
+              "requestType": "UserResetPasswordRequest",
+              "requestLongType": "UserResetPasswordRequest",
+              "requestFullType": "nori.v0.UserResetPasswordRequest",
+              "requestStreaming": false,
+              "responseType": "Empty",
+              "responseLongType": ".google.protobuf.Empty",
+              "responseFullType": "google.protobuf.Empty",
+              "responseStreaming": false
             }
           ]
         }
       ]
+    },
+    {
+      "name": "nori/v0/user/access_token.proto",
+      "description": "",
+      "package": "nori.v0",
+      "hasEnums": false,
+      "hasExtensions": false,
+      "hasMessages": true,
+      "hasServices": false,
+      "enums": [],
+      "extensions": [],
+      "messages": [
+        {
+          "name": "AccessToken",
+          "longName": "AccessToken",
+          "fullName": "nori.v0.AccessToken",
+          "description": "Represents a user's access token.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "access_token",
+              "description": "User's access token in bytes.",
+              "label": "",
+              "type": "bytes",
+              "longType": "bytes",
+              "fullType": "bytes",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        }
+      ],
+      "services": []
+    },
+    {
+      "name": "nori/v0/user/token_pair.proto",
+      "description": "",
+      "package": "nori.v0",
+      "hasEnums": false,
+      "hasExtensions": false,
+      "hasMessages": true,
+      "hasServices": false,
+      "enums": [],
+      "extensions": [],
+      "messages": [
+        {
+          "name": "TokenPair",
+          "longName": "TokenPair",
+          "fullName": "nori.v0.TokenPair",
+          "description": "TokenPair object that contains both refresh and access tokens.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "refresh_token",
+              "description": "Refresh token for user sessions",
+              "label": "",
+              "type": "RefreshToken",
+              "longType": "RefreshToken",
+              "fullType": "nori.v0.RefreshToken",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "access_token",
+              "description": "Access token for user authentication",
+              "label": "",
+              "type": "AccessToken",
+              "longType": "AccessToken",
+              "fullType": "nori.v0.AccessToken",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        }
+      ],
+      "services": []
     },
     {
       "name": "nori/v0/message/message.proto",
@@ -1178,6 +1600,99 @@
       "services": []
     },
     {
+      "name": "nori/v0/message/get_message_request.proto",
+      "description": "",
+      "package": "nori.v0",
+      "hasEnums": true,
+      "hasExtensions": false,
+      "hasMessages": true,
+      "hasServices": false,
+      "enums": [
+        {
+          "name": "Direction",
+          "longName": "Direction",
+          "fullName": "nori.v0.Direction",
+          "description": "",
+          "values": [
+            {
+              "name": "OLDER",
+              "number": "0",
+              "description": "Retrieve messages older than the baseline."
+            },
+            {
+              "name": "NEWER",
+              "number": "1",
+              "description": "Retrieve messages newer than the baseline."
+            }
+          ]
+        }
+      ],
+      "extensions": [],
+      "messages": [
+        {
+          "name": "GetMessageRequest",
+          "longName": "GetMessageRequest",
+          "fullName": "nori.v0.GetMessageRequest",
+          "description": "Get message request containing the details for retrieving messages.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "room_id",
+              "description": "Room id of the message.",
+              "label": "",
+              "type": "RoomId",
+              "longType": "RoomId",
+              "fullType": "nori.v0.RoomId",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "limit",
+              "description": "The maximum number of messages to retrieve. 0 =\u003e default limit.",
+              "label": "",
+              "type": "uint32",
+              "longType": "uint32",
+              "fullType": "uint32",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "baseline",
+              "description": "The baseline message id to retrieve messages from (not included in the response).",
+              "label": "",
+              "type": "MessageId",
+              "longType": "MessageId",
+              "fullType": "nori.v0.MessageId",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "direction",
+              "description": "The direction to retrieve messages.",
+              "label": "",
+              "type": "Direction",
+              "longType": "Direction",
+              "fullType": "nori.v0.Direction",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        }
+      ],
+      "services": []
+    },
+    {
       "name": "nori/v0/message/message_id.proto",
       "description": "",
       "package": "nori.v0",
@@ -1247,10 +1762,10 @@
             },
             {
               "name": "GetMessages",
-              "description": "Authentication: Required. Receive messages.",
-              "requestType": "RoomId",
-              "requestLongType": "RoomId",
-              "requestFullType": "nori.v0.RoomId",
+              "description": "Authentication: Required. Receive messages based on request parameters.",
+              "requestType": "GetMessageRequest",
+              "requestLongType": "GetMessageRequest",
+              "requestFullType": "nori.v0.GetMessageRequest",
               "requestStreaming": false,
               "responseType": "Message",
               "responseLongType": "Message",

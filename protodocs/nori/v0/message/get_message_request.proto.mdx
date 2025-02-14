@@ -1,0 +1,33 @@
+---
+title: get_message_request.proto
+hide_title: true
+---
+
+import { ProtoMessage, ProtoServiceMethod, ProtoEnum } from '@theme/ProtoFile';
+
+# `get_message_request.proto`
+_**path** nori/v0/message/get_message_request.proto_
+
+_**package** nori.v0_
+
+
+
+---
+
+## Messages
+
+
+### `GetMessageRequest`
+<ProtoMessage key={0} message={{"name":"GetMessageRequest","longName":"GetMessageRequest","fullName":"nori.v0.GetMessageRequest","description":"Get message request containing the details for retrieving messages.","hasExtensions":false,"hasFields":true,"hasOneofs":false,"extensions":[],"fields":[{"name":"room_id","description":"Room id of the message.","label":"","type":"RoomId","longType":"RoomId","fullType":"nori.v0.RoomId","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":"","typeLink":"/protodocs/nori/v0/room/room_id.proto#roomid"},{"name":"limit","description":"The maximum number of messages to retrieve. 0 => default limit.","label":"","type":"uint32","longType":"uint32","fullType":"uint32","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":""},{"name":"baseline","description":"The baseline message id to retrieve messages from (not included in the response).","label":"","type":"MessageId","longType":"MessageId","fullType":"nori.v0.MessageId","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":"","typeLink":"/protodocs/nori/v0/message/message_id.proto#messageid"},{"name":"direction","description":"The direction to retrieve messages.","label":"","type":"Direction","longType":"Direction","fullType":"nori.v0.Direction","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":"","typeLink":"/protodocs/nori/v0/message/get_message_request.proto#direction"}]}} />
+
+---
+## Enums
+
+
+### `Direction`
+<ProtoEnum key={0} enumb={{"name":"Direction","longName":"Direction","fullName":"nori.v0.Direction","description":"","values":[{"name":"OLDER","number":"0","description":"Retrieve messages older than the baseline."},{"name":"NEWER","number":"1","description":"Retrieve messages newer than the baseline."}]}} />
+
+---
+
+
+  
